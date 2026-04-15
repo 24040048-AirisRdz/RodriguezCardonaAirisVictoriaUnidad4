@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Mashup Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+<header>
+  <h1>
+    <span class="logo-dot"></span>
+    API Mashup Dashboard
+  </h1>
+  <div class="header-badges">
+    <span class="badge">✦ Geo</span>
+    <span class="badge">✦ Social</span>
+    <span class="badge">✦ Shop</span>
+    <span class="badge">✦ DB</span>
+    <span class="badge">✦ SMS</span>
+    <span class="badge">✦ Stream</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- geo -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><div class="card-icon">📍</div> Geolocalización</div>
+      <div class="card-dot"></div>
+    </div>
+    <div class="input-row">
+      <input type="text" id="city" placeholder="Buscar ciudad…">
+      <button class="btn-primary" onclick="buscarCiudad()">Buscar</button>
+      <button class="btn-secondary" onclick="miUbicacion()">📌 Yo</button>
+    </div>
+    <div id="map"></div>
+    <div id="geo-info"></div>
+  </div>
+
+  <!-- social -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><div class="card-icon">▶️</div> Red Social</div>
+      <div class="card-dot"></div>
+    </div>
+    <div class="input-row">
+      <input type="text" id="yt-search" placeholder="Buscar videos…">
+      <button class="btn-primary" onclick="buscarVideos()">Buscar</button>
+    </div>
+    <div id="yt-player"></div>
+    <div class="card-body"><div id="yt-results"></div></div>
+  </div>
+
+  <!-- shop -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><div class="card-icon">🛒</div> E-Commerce</div>
+      <div class="card-dot"></div>
+    </div>
+    <div class="shop-controls">
+      <input type="text" id="shop-search" placeholder="Buscar producto…" oninput="buscarProducto()">
+    </div>
+    <div class="card-body"><div id="shop-result"></div></div>
+  </div>
+
+  <!-- db -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><div class="card-icon">💾</div> Base de Datos</div>
+      <div class="card-dot"></div>
+    </div>
+    <div class="db-form">
+      <div class="input-row">
+        <input type="text" id="db-nombre" placeholder="Nombre">
+        <input type="email" id="db-email" placeholder="Correo">
+      </div>
+      <button class="btn-primary" style="align-self:flex-start" onclick="guardarDato()">+ Registrar</button>
+    </div>
+    <div class="card-body"><div id="db-result"></div></div>
+  </div>
+
+  <!-- sms-->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><div class="card-icon">💬</div> Mensajería SMS</div>
+      <div class="card-dot"></div>
+    </div>
+    <div class="sms-form">
+      <input type="text" id="sms-numero" placeholder="Número destino">
+      <textarea id="sms-mensaje" placeholder="Escribe tu mensaje…"></textarea>
+      <button class="btn-primary" style="align-self:flex-start" onclick="enviarSMS()">📤 Enviar</button>
+    </div>
+    <div class="card-body"><div id="sms-result"></div></div>
+  </div>
+
+  <!-- stream -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><div class="card-icon">🎵</div> Streaming</div>
+      <div class="card-dot"></div>
+    </div>
+    <div class="input-row">
+      <input type="text" id="sp-search" placeholder="Buscar canción…">
+      <button class="btn-primary" onclick="buscarCancion()">Buscar</button>
+    </div>
+    <div id="sp-player"></div>
+    <div class="card-body"><div id="sp-results"></div></div>
+  </div>
+
+</div>
+
+<footer>✦ API Mashup Dashboard &nbsp;·&nbsp; Geo · Social · E-Commerce · DB · SMS · Streaming ✦</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js/geo.js"></script>
+<script src="js/social.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/db.js"></script>
+<script src="js/sms.js"></script>
+<script src="js/stream.js"></script>
+
+</body>
+</html>
